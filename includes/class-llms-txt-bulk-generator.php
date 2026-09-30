@@ -6,11 +6,46 @@
  * @since 1.0.0
  * @author Dante Testa (https://dantetesta.com.br)
  * @updated 2026-01-03 - Compatibilidade PHP 8.2+ e segurança
+ * @updated 2026-10-01 - Compatibilidade PHP 8.4 (sem chamadas deprecadas)
  */
 
 // Evitar acesso direto
 if (!defined('ABSPATH')) {
     exit;
+}
+
+/**
+ * Fallback para wp_get_admin_notice() (introduzido no WP 6.3).
+ *
+ * Mantém o plugin compatível com instalações antigas sem quebrar em
+ * WordPress novos — evita notices de "call to undefined function".
+ *
+ * @since 2.3.4
+ */
+if (!function_exists('llms_txt_render_admin_notice')) {
+    /**
+     * Renderiza um aviso administrativo de forma segura em qualquer WP.
+     *
+     * @param string $message Mensagem (já escapada pelo chamador quando necessário).
+     * @param string $type    'success'|'error'|'warning'|'info'.
+     * @return void
+     */
+    function llms_txt_render_admin_notice(string $message, string $type = 'info'): void
+    {
+        if (function_exists('wp_get_admin_notice')) {
+            echo wp_get_admin_notice(
+                $message,
+                array(
+                    'type'               => $type,
+                    'dismissible'        => true,
+                    'additional_classes' => array('is-dismissible'),
+                )
+            );
+            return;
+        }
+
+        printf('<div class="notice notice-%s is-dismissible"><p>%s</p></div>', esc_attr($type), $message); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    }
 }
 
 /**
@@ -395,7 +430,7 @@ class LLMS_Txt_Bulk_Generator
             }
 
             add_action('admin_notices', function () use ($error_message) {
-                echo '<div class="notice notice-error is-dismissible"><p>' . esc_html($error_message) . '</p></div>';
+                llms_txt_render_admin_notice(esc_html($error_message), 'error');
             });
         }
     }
@@ -538,9 +573,11 @@ class LLMS_Txt_Bulk_Generator
             return $description;
         }
 
-        // Limitar tamanho da descrição a 350 caracteres
-        if (mb_strlen($description) > 350) {
-            $description = mb_substr($description, 0, 347) . '...';
+        // Limitar tamanho da descrição a 350 caracteres.
+        // PHP 8.4: mb_substr() emite deprecation se a codificação não é
+        // informada explicitamente quando o argumento encoding é omitido.
+        if (mb_strlen($description, 'UTF-8') > 350) {
+            $description = mb_substr($description, 0, 347, 'UTF-8') . '...';
         }
 
         return apply_filters('llms_txt_generated_technical_description', $description, $post);

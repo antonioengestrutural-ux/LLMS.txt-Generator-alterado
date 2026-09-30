@@ -83,6 +83,8 @@ class LLMS_Txt_File
         add_action('wp_loaded', array($this, 'maybe_check_file_on_plugin_page'));
 
         // Garante que a regeneração periódica aconteça sem travar o admin.
+        // O resultado é memoizado por requisição e protegido por transient,
+        // para não consultar o cron a cada pageview.
         add_action('init', array($this, 'ensure_regeneration_schedule'));
 
         // Hooks para regenerar o arquivo quando as configurações são salvas.
@@ -112,9 +114,26 @@ class LLMS_Txt_File
      */
     public function ensure_regeneration_schedule(): void
     {
+        // Desempenho: memoiza por requisição (evita repetir em re-entradas)
+        // e usa um transient de 12h como "carimbo" — assim o wp_next_scheduled()
+        // (que lê a tabela de opções/criada do cron) só roda de 12 em 12 horas,
+        // e não em toda requisição. Sem isso, sites com muitos agendamentos
+        // ficam pesados no front-end.
+        if (wp_cache_get('llms_txt_schedule_checked', 'llms_txt')) {
+            return;
+        }
+
+        if (get_transient('llms_txt_schedule_check')) {
+            wp_cache_set('llms_txt_schedule_checked', true, 'llms_txt');
+            return;
+        }
+
         if (!wp_next_scheduled('llms_txt_do_regenerate')) {
             wp_schedule_event(time() + MINUTE_IN_SECONDS, 'hourly', 'llms_txt_do_regenerate');
         }
+
+        set_transient('llms_txt_schedule_check', 1, 12 * HOUR_IN_SECONDS);
+        wp_cache_set('llms_txt_schedule_checked', true, 'llms_txt');
     }
 
     /**
