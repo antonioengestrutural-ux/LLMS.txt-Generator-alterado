@@ -169,6 +169,11 @@ class LLMS_Txt_Generator {
     public static function uninstall(): void {
         // Remover todas as opções do plugin
         delete_option('llms_txt_settings');
+        delete_option('llms_txt_last_regen_ts');
+        delete_transient('llms_txt_regen_running');
+
+        // Remover tarefa agendada de regeneração
+        wp_clear_scheduled_hook('llms_txt_do_regenerate');
         
         // Remover metadados de posts usando queries seguras com prepare()
         global $wpdb;

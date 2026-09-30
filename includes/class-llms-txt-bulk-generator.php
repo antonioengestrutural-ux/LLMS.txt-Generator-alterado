@@ -879,5 +879,8 @@ class LLMS_Txt_Bulk_Generator
     }
 }
 
-// Inicializar a classe
-LLMS_Txt_Bulk_Generator::get_instance();
+// Inicializar a classe apenas no admin — evita registrar hooks e carregar
+// assets do gerador em massa em todas as requisições do frontend.
+if (is_admin()) {
+    LLMS_Txt_Bulk_Generator::get_instance();
+}
