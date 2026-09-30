@@ -165,9 +165,9 @@ class LLMS_Txt_Meta_Box
             update_post_meta($post_id, '_llms_txt_description', $description);
         }
 
-        // Regenerar arquivo llms.txt
-        $file_manager = LLMS_Txt_File::get_instance();
-        $file_manager->regenerate_file();
+        // Regenerar arquivo llms.txt de forma assíncrona (não trava a tela de
+        // salvamento do post, mesmo em sites com milhares de posts).
+        do_action('llms_txt_regenerate_file');
     }
 
     /**
