@@ -581,7 +581,7 @@ class LLMS_Txt_File
         // Adicionar rodapé
         $lines[] = "";
         $lines[] = "---";
-        $lines[] = "Gerado por LLMS.txt Generator da Tosta www.tosta.com.br v" . LLMS_TXT_GENERATOR_VERSION . " | " . wp_date('Y-m-d H:i:s');
+        $lines[] = "Gerado dinamicamente | " . wp_date('Y-m-d H:i:s');
 
         // Limpa o cache de metas após a geração para liberar memória.
         $this->meta_cache = null;
