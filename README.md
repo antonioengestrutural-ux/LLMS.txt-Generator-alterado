@@ -1,55 +1,37 @@
 <p align="center">
   <img src="https://img.shields.io/badge/WordPress-Plugin-blue.svg" alt="WordPress Plugin">
-  <img src="https://img.shields.io/badge/Versão-2.3.2-green.svg" alt="Versão">
+  <img src="https://img.shields.io/badge/Versão-2.4.0-green.svg" alt="Versão">
   <img src="https://img.shields.io/badge/PHP-8.2+-purple.svg" alt="PHP 8.2+">
-  <img src="https://img.shields.io/badge/WordPress-5.6+-21759b.svg" alt="WordPress 5.6+">
+  <img src="https://img.shields.io/badge/WordPress-6.5+-21759b.svg" alt="WordPress 6.5+">
   <img src="https://img.shields.io/badge/Licença-GPL%20v2%2B-orange.svg" alt="Licença">
   <img src="https://img.shields.io/badge/i18n-pt__BR%20%7C%20en__US-yellow.svg" alt="i18n">
 </p>
 
-# LLMS.txt Generator
+# LLMS.txt Generator (manutenção por antonio.eng.br)
 
 <p align="center">
   <b>Plugin WordPress para gerar, gerenciar e otimizar o arquivo <code>llms.txt</code> do seu site</b><br>
   Controle, com precisão, como ChatGPT, Claude, Gemini e demais sistemas de IA acessam, leem e representam o conteúdo do seu WordPress.
 </p>
 
-<p align="center">
-  <a href="https://youtu.be/fsVKjmBlwDM">
-    <img src="https://img.shields.io/badge/Assista%20o%20vídeo-YouTube-red.svg" alt="YouTube Video">
-  </a>
-</p>
-
-<div align="center" style="margin: 30px 0;">
-  <a href="https://github.com/tosta/LLMS.txt-Generator/archive/refs/heads/main.zip" style="display:inline-block;">
-    <img src="https://img.shields.io/badge/DOWNLOAD%20PLUGIN-Vers%C3%A3o%202.3.2-2ea44f?style=for-the-badge&logo=wordpress&logoColor=white" alt="DOWNLOAD PLUGIN" width="300">
-  </a>
-</div>
-
-<div align="center" style="margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); border-radius: 12px;">
-  <h3>💬 Participe da Comunidade!</h3>
-  <p><b>Entre no nosso grupo de WhatsApp para networking, dúvidas e novidades sobre WordPress e IA</b></p>
-  <a href="https://chat.whatsapp.com/HPvy2fzidRM2jhNj7ii22u">
-    <img src="https://img.shields.io/badge/ENTRAR%20NO%20GRUPO-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Grupo WhatsApp" width="280">
-  </a>
-</div>
-
 ---
 
-## 🚨 Destaques da versão 2.3.1 (Release de segurança)
+## ⚠️ Sobre esta versão (fork de manutenção)
 
-Esta versão é focada em **hardening de segurança** e atualização do modelo de IA padrão. Recomendada para todos os usuários.
+Esta é uma **manutenção derivada** do plugin original **LLMS.txt Generator**, criado por **Tosta / Dante Testa** (<https://tosta.com.br>, repositório original: <https://github.com/tosta/LLMS.txt-Generator>).
 
-| Mudança | O que muda na prática |
+**As alterações a partir da versão 2.4.0 foram feitas por [antonio.eng.br](https://github.com/antonio-eng-br)** e incluem:
+
+| Alteração | Detalhe |
 |---|---|
-| 🤖 Modelo OpenAI atualizado | `gpt-3.5-turbo` (descontinuado) substituído por **`gpt-4o-mini`**. Mesma chave, mesmo endpoint, mais barato e mais rápido. |
-| 🔐 Chaves de API criptografadas | Suas chaves OpenAI / DeepSeek / Gemini agora ficam cifradas em `wp_options` com AES-256-CBC. Quem atualiza não precisa fazer nada — as chaves antigas são re-criptografadas automaticamente no próximo salvamento. |
-| 🙈 HTML não vaza chave salva | O campo de chave de API não imprime mais o valor armazenado no HTML. Placeholder indica se já existe chave, e deixar o campo vazio preserva o que está salvo. |
-| 🗑️ Arquivo de backup removido | `templates/admin-page.php.bak` (47 KB) que vazava o código completo da interface admin foi removido do pacote. |
-| 🚦 Bulk action sinaliza erro | Ações em massa com nonce inválido agora retornam erro explícito em vez de falhar silenciosamente. |
-| 📂 Pré-checagem de escrita | `is_writable()` validado antes de gravar `llms.txt`, com log claro se o diretório não for gravável. |
+| 📌 Versionamento | Plugin atualizado para a série **2.4.x** |
+| 🐘 PHP | Linha base consolidada em **PHP 8.2+** (compatível até 8.4) |
+| 🧱 WordPress | Requisito mínimo elevado para **WordPress 6.5+** (`Requires at least` e checagem na ativação) |
+| 📄 Documentação | README reescrito e arquivo de créditos legais separado ([LEGAL.md](LEGAL.md)) |
 
-Detalhes técnicos completos no [Changelog](#-changelog).
+O código continua licenciado sob **GPL-2.0+**. Os créditos ao autor original são preservados **exatamente onde a licença obriga**: nos cabeçalhos de copyright do código e no aviso de licença. Detalhes completos em **[LEGAL.md](LEGAL.md)**.
+
+> Dúvidas sobre o projeto original, suporte upstream e contato com o criador: <https://tosta.com.br> / <https://github.com/tosta/LLMS.txt-Generator>.
 
 ---
 
@@ -131,7 +113,7 @@ Cada *Custom Post Type* pode ter sua própria fonte de conteúdo:
 - Arquitetura preparada para novos idiomas (`.po`, `.mo`, `.l10n.php`)
 - Localização dos scripts JS para feedback em tempo real
 
-### 🔐 Segurança (v2.3.1)
+### 🔐 Segurança
 
 - **Criptografia AES-256-CBC** das chaves de API armazenadas em `wp_options`
 - **Backward compatibility**: chaves antigas em texto plano continuam funcionando e são re-criptografadas no primeiro salvamento
@@ -141,6 +123,7 @@ Cada *Custom Post Type* pode ter sua própria fonte de conteúdo:
 - **Escape contextual** (`esc_html`, `esc_attr`, `esc_url`) em todas as saídas
 - **Sanitização** (`sanitize_text_field` + `wp_unslash`) em todas as entradas
 - Sem `eval`, `shell_exec`, `unserialize` de dados externos, `include` dinâmico
+- **Sistema de logs dedicado** (`LLMS_Txt_Logger`) com sanitização automática de segredos (`[REDACTED]`) e rotação de arquivo
 
 ---
 
@@ -148,13 +131,13 @@ Cada *Custom Post Type* pode ter sua própria fonte de conteúdo:
 
 | Item | Mínimo | Recomendado |
 |---|---|---|
-| **WordPress** | 5.6 | 6.5+ |
+| **WordPress** | 6.5 | 6.7+ |
 | **PHP** | 8.2 | 8.3 ou 8.4 |
 | **Extensões PHP** | `openssl`, `mbstring`, `json` | mesmas |
 | **Permissão de escrita** | em `ABSPATH` (raiz do WP) | — |
 | **Chave de API** (opcional) | OpenAI, OpenRouter ou Gemini | — |
 
-> ⚠️ Sem `openssl`, a criptografia das chaves de API não funciona — o plugin ainda roda, mas perde a camada de hardening introduzida na 2.3.1.
+> ⚠️ Sem `openssl`, a criptografia das chaves de API não funciona — o plugin ainda roda, mas perde a camada de hardening.
 
 ---
 
@@ -162,7 +145,7 @@ Cada *Custom Post Type* pode ter sua própria fonte de conteúdo:
 
 ### Método 1 — Upload via admin (recomendado)
 
-1. Baixe o ZIP em [Releases](https://github.com/tosta/LLMS.txt-Generator/archive/refs/heads/main.zip)
+1. Baixe/compile o ZIP desta manutenção
 2. No WP Admin, vá em **Plugins → Adicionar novo → Enviar plugin**
 3. Selecione o ZIP e clique em **Instalar agora**
 4. Clique em **Ativar plugin**
@@ -171,7 +154,7 @@ Cada *Custom Post Type* pode ter sua própria fonte de conteúdo:
 
 ```bash
 cd wp-content/plugins/
-unzip llms-txt-generator-2.3.1.zip
+unzip llms-txt-generator-2.4.0.zip
 # A pasta deve se chamar exatamente "llms-txt-generator"
 ```
 
@@ -180,7 +163,7 @@ Em seguida, ative em **Plugins** no WP Admin.
 ### Método 3 — WP-CLI
 
 ```bash
-wp plugin install https://github.com/tosta/LLMS.txt-Generator/archive/refs/heads/main.zip --activate
+wp plugin install path/to/llms-txt-generator-2.4.0.zip --activate
 ```
 
 ---
@@ -290,13 +273,13 @@ add_filter('llms_txt_generated_technical_description', function ($description, $
 
 - Verifique se **Habilitar arquivo llms.txt** está marcado
 - Vá em **Configurações → Links permanentes** e clique em **Salvar** (sem alterar nada) para forçar reescrita das regras
-- Confirme se o WordPress consegue escrever em `ABSPATH` (raiz do site). Em caso de falha, o log do PHP terá uma linha começando com `LLMS.txt Generator: destino não gravável em...`
+- Confirme se o WordPress consegue escrever em `ABSPATH` (raiz do site). Em caso de falha, o log do plugin (Configurações → LLMS.txt Logs) terá a linha de destino não gravável
 </details>
 
 <details>
-<summary><b>Erro "Chave da API OpenAI não configurada" após atualizar para 2.3.1</b></summary>
+<summary><b>Erro "Chave da API OpenAI não configurada"</b></summary>
 
-A versão 2.3.1 lê chaves criptografadas. Se você estiver vendo esse erro **após** ter salvado a chave novamente em 2.3.1, é provável que a extensão `openssl` do PHP não esteja disponível.
+O plugin lê chaves criptografadas. Se o erro aparece **após** salvar a chave, é provável que a extensão `openssl` do PHP não esteja disponível.
 
 Execute no servidor: `php -m | grep openssl`. Se nada aparecer, peça à sua hospedagem para habilitar a extensão.
 
@@ -335,8 +318,8 @@ Se o cache impedir a regeneração ao publicar, exclua a rota `/llms.txt` da lis
 ## 🛠️ Para contribuidores
 
 ```bash
-git clone https://github.com/tosta/LLMS.txt-Generator.git
-cd LLMS.txt-Generator
+git clone <repo desta manutenção>
+cd llms-txt-generator
 
 # Linter do WordPress (opcional, mas recomendado)
 composer require --dev wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer
@@ -346,155 +329,45 @@ vendor/bin/phpcs --standard=WordPress --extensions=php .
 Pull requests bem-vindos. Por favor, mantenha:
 
 - PHP 8.2+ compatível
+- WordPress 6.5+ como linha base
 - Sanitização e escape consistentes com o resto do código
 - Strings traduzíveis com `__()` / `_e()` / `esc_html__()` no text domain `llms-txt-generator`
-
----
-
-## 🔧 Suporte
-
-- 🎥 **Tutorial em vídeo**: [YouTube](https://youtu.be/fsVKjmBlwDM)
-- 🌐 **Site oficial**: [tosta.com.br](https://tosta.com.br)
-- 📧 **E-mail**: <contato@tosta.com.br>
-- 💬 **WhatsApp (grupo)**: [Entrar](https://chat.whatsapp.com/HPvy2fzidRM2jhNj7ii22u)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/tosta/LLMS.txt-Generator/issues)
-
-Ao abrir uma issue, por favor inclua:
-- Versão do WordPress, PHP e do plugin
-- Provedor de IA em uso (se aplicável)
-- Passos para reproduzir
-- Log de erros (`wp-content/debug.log` se `WP_DEBUG` ativo)
-
----
-
-## 💳 Apoie o desenvolvimento
-
-Se o plugin economizou seu tempo ou melhorou seu SEO/AEO, considere:
-
-### 🇧🇷 PIX
-**Chave:** `dante.testa@gmail.com`
-
-### 🌎 PayPal
-**Conta:** `dante.testa@gmail.com` — [doar diretamente](https://www.paypal.com/donate/?hosted_button_id=BAQGVU8MGWDTN)
+- Os avisos de copyright/licença do trabalho original intactos (ver [LEGAL.md](LEGAL.md))
 
 ---
 
 ## 📝 Changelog
 
-### 2.3.2 (Maio 2026) — Sistema de logs + i18n fix
-- 📋 **Sistema de log dedicado** via nova classe `LLMS_Txt_Logger`
-  - Captura snapshot completo do ambiente na ativação (versão PHP, WP, locale, extensões `openssl`/`mbstring`/`json`/`curl`, gravabilidade de ABSPATH, `memory_limit`, multisite, user ID)
-  - Registra eventos de desativação, gravação do `llms.txt`, falhas em chamadas a APIs externas (OpenAI/DeepSeek/Gemini), falhas de criptografia, salvamento de configurações
-  - Sanitização automática: chaves contendo `api_key`, `token`, `secret`, `password` ou `auth` são gravadas como `[REDACTED]`
-  - Rotação simples ao passar de 500 KB (mantém `.old`)
-  - Diretório protegido por `.htaccess` (`Deny from all`) e `index.html` vazio em `wp-content/uploads/llms-txt-generator/`
-- 🖥️ **Página admin em Configurações → LLMS.txt Logs** com viewer das últimas 500 linhas, download em texto plano e botão de limpar (com nonce + capability)
-- 🔧 **i18n fix:** `load_plugin_textdomain()` movido de `plugins_loaded` para `init`, eliminando o notice `_load_textdomain_just_in_time` em WP 6.7+ para sites não-PT-BR
+### 2.4.0 (Outubro 2026) — Manutenção antonio.eng.br
+- 👷 **Fork de manutenção**: alterações a partir desta versão feitas por **antonio.eng.br** sobre o código original de Tosta (GPL-2.0+)
+- 🐘 **PHP 8.2+** consolidado como linha base (`Requires PHP: 8.2`)
+- 🧱 **WordPress 6.5+** agora é requisito mínimo (`Requires at least` e checagem na ativação atualizados)
+- 📄 README reescrito para refletir a manutenção derivada
+- ⚖️ Novo arquivo [LEGAL.md](LEGAL.md) com créditos ao autor original dentro do escopo obrigatório da GPL
+- ♻️ Constantes de versão (`LLMS_TXT_GENERATOR_VERSION` / `LLMS_TXT_VERSION`) sincronizadas em 2.4.0
 
-### 2.3.1 (Maio 2026) — Release de segurança
-- 🤖 **Modelo OpenAI atualizado**: `gpt-3.5-turbo` (descontinuado pela OpenAI) substituído por `gpt-4o-mini` — mesmo endpoint `/v1/chat/completions`, mais barato e mais rápido
-- 🔐 **Criptografia AES-256-CBC das chaves de API** em `wp_options` via nova classe `LLMS_Txt_Crypto`
-  - Backward compat: chaves legadas em texto plano continuam funcionando e são re-criptografadas no próximo salvamento
-  - Chave derivada de `AUTH_KEY` + `SECURE_AUTH_SALT` (com fallback para `wp_salt()`)
-- 🙈 **Inputs de chave de API não renderizam mais o valor** no atributo `value` do HTML
-  - Placeholder indica se já existe chave salva
-  - Campo vazio preserva a chave atual no salvamento (evita apagar acidentalmente)
-- 🗑️ **Remoção do arquivo `templates/admin-page.php.bak`** (47 KB) que vazava o código completo da interface admin
-- 📂 **`is_writable()` pre-check** antes de `file_put_contents()` na gravação do `llms.txt`, com `error_log` claro em caso de falha
-- 🚦 **Bulk action com nonce inválido** agora sinaliza erro via querystring (`llms_txt_bulk_error=invalid_nonce`) em vez de falhar silenciosamente
-- 🧹 `.gitignore` atualizado para excluir `*.bak` e `*.backup` de futuras distribuições
+### Histórico upstream (resumo)
 
-### 2.3.0 (Abril 2026)
-- 🛡️ **Hardening de segurança completo**: sanitização de nonces com `sanitize_text_field(wp_unslash())` em todos os handlers AJAX
-- 🛡️ **Verificação de capability** (`current_user_can`) no bulk action handler
-- 🛡️ **Verificação de nonce WordPress** (`bulk-posts`) no processamento de ações em massa
-- 🛡️ **Escape de mensagens de erro** de APIs externas com `esc_html()` contra XSS refletido
-- 🛡️ **`sslverify => true` explícito** em todas as chamadas `wp_remote_post` (OpenAI, DeepSeek, Gemini)
-- 🛡️ **Sanitização de `$_REQUEST`** com `wp_unslash()` e `absint()` no bulk action
-- 🛡️ **`esc_attr()`/`esc_html()`** em outputs do template meta-box
-- 🔧 **PHP 8.2+ obrigatório**: `Requires PHP` atualizado de 8.0 para 8.2
-- 🔧 **Null safety**: cast `(string)` em `strip_tags`, `preg_replace`, `mb_strlen`, `mb_substr`
-- 🔧 **`strip_tags()` substituído por `wp_strip_all_tags()`** nos handlers AJAX
-- 🔧 **`substr()` substituído por `mb_substr()`** para suporte UTF-8 correto
-- 🔧 **`date()` substituído por `wp_date()`** no rodapé do llms.txt
-- 🔧 **Tipagem nullable** em `LLMS_Txt_I18n::$instance`
-- 🔧 **`error_log()` condicionado a `WP_DEBUG`** em produção (removidos ~15 logs soltos)
-- ✅ Validado com PHP 8.4.12, PHPCompatibility 8.2-8.4 (0 erros), PHPStan level 6
+As versões anteriores foram desenvolvidas por Tosta / Dante Testa no repositório original. Principais marcos:
 
-### 2.2.0 (Janeiro 2026)
-- 🤖 **Novo! Integração com Google Gemini API (Flash 2.0)**
-- ✨ Terceira opção de provedor de IA: OpenAI, DeepSeek e agora Gemini
-- 🎨 Novo card de seleção do Gemini na interface de configurações
-- 🔑 Campo dedicado para chave API do Google Gemini com validação visual
-- 🔗 Link direto para obter chave gratuita no Google AI Studio
-- ⚡ Geração de descrições via Gemini na meta box individual
-- 📦 Suporte ao Gemini no bulk generator para processamento em massa
-- 🛡️ Compatibilidade com PHP 8.0+ e WordPress 6.9
-- 🔧 Correções de compatibilidade com propriedades dinâmicas (PHP 8.2+)
+- **2.3.2** — Sistema de logs dedicado (`LLMS_Txt_Logger`), página admin de logs, fix de i18n em WP 6.7+
+- **2.3.1** — Release de segurança: criptografia AES-256-CBC das chaves de API, modelo `gpt-4o-mini`, remoção de `.bak` vazado, pre-check de escrita
+- **2.3.0** — Hardening de segurança completo (nonces, capabilities, sslverify, escapes), PHP 8.2+ obrigatório, null safety
+- **2.2.0** — Integração com Google Gemini (Flash 2.0)
+- **2.1.0** — Correções de compatibilidade PHP 8.2+
+- **2.0.4** — Tradução en_US, fixes de CPT/bulk generator, sistema i18n
+- **2.0.0** — DeepSeek, Tailwind CSS, geração em massa
+- **1.0.0** — Lançamento inicial
 
-### 2.1.0 (Janeiro 2026)
-- 🔧 Correções de compatibilidade com PHP 8.2+
-- 🛡️ Declaração explícita de propriedades de classe
-- ⚡ Melhorias de performance e estabilidade
-
-### 2.0.4 (Janeiro 2025)
-- 🌐 Tradução completa para inglês americano (en_US)
-- 🔧 Bulk generator respeita configuração de metafields em CPTs
-- 🔧 Botão individual nas admin columns usa fonte configurada
-- 🔧 Meta box funcional em todos os CPTs habilitados
-- 🔧 Geração automática respeita configuração de campos personalizados
-- 🔧 Arquivo `llms.txt` sem limite de posts (inclui todos)
-- 🛠️ Função auxiliar `extract_post_content()` centralizada
-- 📊 Logs de debug para troubleshooting
-- 🔒 Verificações de segurança aprimoradas
-- 🌍 Sistema i18n completamente implementado
-
-### 2.0.0 (Julho 2025)
-- Integração com DeepSeek como alternativa à API OpenAI
-- Nova interface com Tailwind CSS
-- Geração em massa via Admin Columns
-- Melhorias significativas de performance
-- Suporte a todos os tipos de post personalizados
-- Opção para excluir posts individuais do arquivo
-
-### 1.0.0 (Julho 2025)
-- Lançamento inicial
-- Suporte básico ao arquivo `llms.txt`
-- Integração com a API OpenAI
-- Meta box para controle de conteúdo individual
-- Interface administrativa básica
+Detalhes completos do changelog upstream: [repositório original](https://github.com/tosta/LLMS.txt-Generator).
 
 ---
 
-## 👨‍💻 Sobre o desenvolvedor
+## 🔐 Licença e Créditos
 
-<p align="center">
-  <img src="https://dantetesta.com.br/wp-content/uploads/2026/03/foto-dante-1.webp" alt="Dante Testa" width="160" style="border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-</p>
+Este plugin é distribuído sob a [GPL v2 ou posterior](http://www.gnu.org/licenses/gpl-2.0.html), a mesma licença do trabalho original.
 
-**[Dante Testa](https://dantetesta.com.br)** é desenvolvedor web especializado em **WordPress, Inteligência Artificial aplicada e Vibe Coding**. Cria plugins, temas e ferramentas que unem boas práticas de engenharia com curiosidade técnica acelerada por IA.
+- **Autor original:** Tosta / Dante Testa — © 2025, [tosta.com.br](https://tosta.com.br)
+- **Manutenção e alterações (v2.4.0+):** [antonio.eng.br](https://github.com/antonio-eng-br)
 
-Como educador, compartilha conhecimento através de cursos, mentorias e conteúdo gratuito em vídeo e texto, ajudando profissionais a dominarem o ecossistema WordPress moderno e a integrá-lo com modelos de linguagem de última geração.
-
-Sua missão é **democratizar o acesso a ferramentas de qualidade** e conhecimento técnico, tornando a web mais acessível, mais segura e mais inteligente para todos.
-
-### 🔗 Onde encontrar
-
-- 🌐 **Site**: [tosta.com.br](https://tosta.com.br)
-- 🎥 **YouTube**: [@dantetesta](https://www.youtube.com/@dantetesta)
-- 💻 **GitHub**: [@dantetesta](https://github.com/dantetesta)
-- 💬 **WhatsApp (grupo)**: [entrar na comunidade](https://chat.whatsapp.com/HPvy2fzidRM2jhNj7ii22u)
-
----
-
-## 🔐 Licença
-
-Este plugin é distribuído sob a [GPL v2 ou posterior](http://www.gnu.org/licenses/gpl-2.0.html), a mesma licença do próprio WordPress.
-
-Você pode usar, modificar e redistribuir livremente — comercial ou pessoalmente — desde que preserve a licença e os créditos.
-
----
-
-<p align="center">
-  Feito com ❤️ no Brasil — Tosta Soluções Digitais
-</p>
+Os créditos exigidos pela licença estão preservados no código e documentados em **[LEGAL.md](LEGAL.md)**.
