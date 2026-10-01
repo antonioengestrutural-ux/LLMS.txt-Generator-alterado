@@ -109,11 +109,11 @@ class LLMS_Txt_Generator {
             );
         }
         
-        // Verificar versão mínima do WordPress
-        if (version_compare(get_bloginfo('version'), '5.6', '<')) {
+        // Verificar versão mínima do WordPress (6.5 ou superior)
+        if (version_compare(get_bloginfo('version'), '6.5', '<')) {
             deactivate_plugins(plugin_basename(LLMS_TXT_GENERATOR_FILE));
             wp_die(
-                __('O plugin LLMS.txt Generator requer WordPress 5.6 ou superior.', 'llms-txt-generator'),
+                __('O plugin LLMS.txt Generator requer WordPress 6.5 ou superior.', 'llms-txt-generator'),
                 __('Erro de ativação', 'llms-txt-generator'),
                 array('back_link' => true)
             );

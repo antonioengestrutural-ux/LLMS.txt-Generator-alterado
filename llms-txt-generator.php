@@ -3,11 +3,11 @@
  * Plugin Name: LLMS.txt Generator
  * Plugin URI: https://wordpress.org/plugins/llms-txt-generator
  * Description: Plugin WordPress que gera e gerencia o arquivo llms.txt, permitindo controlar como modelos de IA acessam seu site. Oferece geração automática de descrições técnicas para posts, páginas e CPTs, com suporte à integração com OpenAI e DeepSeek. Ideal para melhorar como as IAs compreendem e representam seu conteúdo.
- * Version: 2.3.2
- * Requires at least: 5.6
+ * Version: 2.4.0
+ * Requires at least: 6.5
  * Requires PHP: 8.2
- * Author: Tosta
- * Author URI: https://tosta.com.br
+ * Author: antonio.eng.br
+ * Author URI: https://github.com/antonio-eng-br
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: llms-txt-generator
@@ -34,7 +34,9 @@
  * - Otimizado para performance e segurança
  * - Geração em massa de descrições via Admin Columns
  *
- * Copyright (c) 2025 Tosta. Todos os direitos reservados.
+ * Copyright (c) 2025 Tosta (GPL-2.0+). Modificações v2.4.0: antonio.eng.br.
+ * Este software é licenciado sob a GPL v2 ou posterior, conforme o WordPress.
+ * Créditos completos do autor original: LEGAL.md
  */
 
 // Evitar acesso direto ao arquivo
@@ -43,8 +45,8 @@ if (!defined('ABSPATH')) {
 }
 
 // Definir constantes do plugin
-define('LLMS_TXT_GENERATOR_VERSION', '2.3.2');
-define('LLMS_TXT_VERSION', '2.3.2'); // Adicionado para compatibilidade com classes que usam esta constante
+define('LLMS_TXT_GENERATOR_VERSION', '2.4.0');
+define('LLMS_TXT_VERSION', '2.4.0'); // Adicionado para compatibilidade com classes que usam esta constante
 define('LLMS_TXT_GENERATOR_FILE', __FILE__);
 define('LLMS_TXT_GENERATOR_PATH', plugin_dir_path(__FILE__));
 define('LLMS_TXT_GENERATOR_URL', plugin_dir_url(__FILE__));
