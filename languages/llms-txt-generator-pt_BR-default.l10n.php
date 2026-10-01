@@ -2,7 +2,7 @@
 return [
     'project-id-version' => 'LLMS.txt Generator 2.0.4',
     'report-msgid-bugs-to' => 'https://wordpress.org/support/plugin/llms-txt-generator',
-    'last-translator' => 'Dante Testa <contato@dantetesta.com.br>',
+    'last-translator' => 'Tosta <contato@tosta.com.br>',
     'language-team' => 'Portuguese (Brazil)',
     'mime-version' => '1.0',
     'content-type' => 'text/plain; charset=UTF-8',

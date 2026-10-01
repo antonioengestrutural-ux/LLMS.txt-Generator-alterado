@@ -1,20 +1,19 @@
 <?php
 /**
- * Plugin Name: LLMS.txt Generator by Dante Testa
- * Plugin URI: https://dantetesta.com.br/plugins/llms-txt-generator
+ * Plugin Name: LLMS.txt Generator
+ * Plugin URI: https://wordpress.org/plugins/llms-txt-generator
  * Description: Plugin WordPress que gera e gerencia o arquivo llms.txt, permitindo controlar como modelos de IA acessam seu site. Oferece geração automática de descrições técnicas para posts, páginas e CPTs, com suporte à integração com OpenAI e DeepSeek. Ideal para melhorar como as IAs compreendem e representam seu conteúdo.
  * Version: 2.3.2
  * Requires at least: 5.6
  * Requires PHP: 8.2
- * Author: Dante Testa
- * Author URI: https://dantetesta.com.br
+ * Author: Tosta
+ * Author URI: https://tosta.com.br
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: llms-txt-generator
  * Domain Path: /languages
  *
  * @package LLMS_Txt_Generator
- * @author Dante Testa (https://dantetesta.com.br)
  *
  * LLMS.txt Generator
  * ==================
@@ -35,7 +34,7 @@
  * - Otimizado para performance e segurança
  * - Geração em massa de descrições via Admin Columns
  *
- * Copyright (c) 2025 Dante Testa. Todos os direitos reservados.
+ * Copyright (c) 2025 Tosta. Todos os direitos reservados.
  */
 
 // Evitar acesso direto ao arquivo
