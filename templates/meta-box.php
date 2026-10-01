@@ -6,7 +6,6 @@
  * @since 1.0.0
  * @updated 1.1.0 Adicionado suporte para DeepSeek V3
  * @updated 2.0.2 Removido Tailwind, usando CSS básico
- * @author Dante Testa (https://dantetesta.com.br)
  */
 
 // Evitar acesso direto ao arquivo

@@ -1,5 +1,5 @@
 # LLMS.txt Generator - English Translation
-# Copyright (C) 2025 Dante Testa
+# Copyright (C) 2025 Tosta
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
@@ -228,26 +228,8 @@ msgid "Conteúdo Personalizado"
 msgstr "Custom Content"
 
 #. Author of the plugin
-msgid "Dante Testa"
-msgstr "Dante Testa"
-
-#: templates/admin-page.php:862
-msgid ""
-"Dante Testa é um desenvolvedor web especializado em WordPress e entusiasta "
-"da tecnologia. Apaixonado por criar soluções que unem inovação e "
-"criatividade, dedica-se a desenvolver plugins e temas que simplificam a vida "
-"de seus usuários. Como educador, compartilha conhecimento através de cursos, "
-"mentorias e conteúdo gratuito, ajudando profissionais a dominarem o "
-"ecossistema WordPress. Sua missão é democratizar o acesso a ferramentas de "
-"qualidade e conhecimento técnico, tornando a web mais acessível para todos."
-msgstr ""
-"Dante Testa is a web developer specializing in WordPress and technology "
-"enthusiast. Passionate about creating solutions that combine innovation and "
-"creativity, he dedicates himself to developing plugins and themes that "
-"simplify the lives of his users. As an educator, he shares knowledge through "
-"courses, mentoring, and free content, helping professionals master the "
-"WordPress ecosystem. His mission is to democratize access to quality tools "
-"and technical knowledge, making the web more accessible to all."
+msgid "Tosta"
+msgstr "Tosta"
 
 #: includes/class-llms-txt-admin.php:723
 msgid "DeepSeek V3 (Gratuito via OpenRouter)"
@@ -467,12 +449,12 @@ msgid "Hospedagem de sites"
 msgstr "Website Hosting"
 
 #. Author URI of the plugin
-msgid "https://dantetesta.com.br"
-msgstr "https://dantetesta.com.br"
+msgid "https://tosta.com.br"
+msgstr "https://tosta.com.br"
 
 #. URI of the plugin
-msgid "https://dantetesta.com.br/plugins/llms-txt-generator"
-msgstr "https://dantetesta.com.br/plugins/llms-txt-generator"
+msgid "https://wordpress.org/plugins/llms-txt-generator"
+msgstr "https://wordpress.org/plugins/llms-txt-generator"
 
 #: templates/admin-page.php:785
 msgid "IA que Cria Sites WordPress"
@@ -556,8 +538,8 @@ msgid "LLMS.txt Generator"
 msgstr "LLMS.txt Generator"
 
 #. Name of the plugin
-msgid "LLMS.txt Generator by Dante Testa"
-msgstr "LLMS.txt Generator by Dante Testa"
+msgid "LLMS.txt Generator"
+msgstr "LLMS.txt Generator"
 
 #: templates/admin-page.php:909
 #, php-format

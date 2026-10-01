@@ -5,7 +5,6 @@
  * @since 1.0.0
  * @updated 1.1.0 Adicionado suporte para DeepSeek R1
  * @updated 1.2.0 Adicionada compatibilidade com editor clássico
- * @author Dante Testa (https://dantetesta.com.br)
  */
 
 (function($) {

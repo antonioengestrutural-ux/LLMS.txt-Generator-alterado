@@ -21,7 +21,7 @@
 </p>
 
 <div align="center" style="margin: 30px 0;">
-  <a href="https://github.com/dantetesta/LLMS.txt-Generator-by-Dante-Testa/archive/refs/heads/main.zip" style="display:inline-block;">
+  <a href="https://github.com/tosta/LLMS.txt-Generator/archive/refs/heads/main.zip" style="display:inline-block;">
     <img src="https://img.shields.io/badge/DOWNLOAD%20PLUGIN-Vers%C3%A3o%202.3.2-2ea44f?style=for-the-badge&logo=wordpress&logoColor=white" alt="DOWNLOAD PLUGIN" width="300">
   </a>
 </div>
@@ -162,7 +162,7 @@ Cada *Custom Post Type* pode ter sua própria fonte de conteúdo:
 
 ### Método 1 — Upload via admin (recomendado)
 
-1. Baixe o ZIP em [Releases](https://github.com/dantetesta/LLMS.txt-Generator-by-Dante-Testa/archive/refs/heads/main.zip)
+1. Baixe o ZIP em [Releases](https://github.com/tosta/LLMS.txt-Generator/archive/refs/heads/main.zip)
 2. No WP Admin, vá em **Plugins → Adicionar novo → Enviar plugin**
 3. Selecione o ZIP e clique em **Instalar agora**
 4. Clique em **Ativar plugin**
@@ -180,7 +180,7 @@ Em seguida, ative em **Plugins** no WP Admin.
 ### Método 3 — WP-CLI
 
 ```bash
-wp plugin install https://github.com/dantetesta/LLMS.txt-Generator-by-Dante-Testa/archive/refs/heads/main.zip --activate
+wp plugin install https://github.com/tosta/LLMS.txt-Generator/archive/refs/heads/main.zip --activate
 ```
 
 ---
@@ -335,8 +335,8 @@ Se o cache impedir a regeneração ao publicar, exclua a rota `/llms.txt` da lis
 ## 🛠️ Para contribuidores
 
 ```bash
-git clone https://github.com/dantetesta/LLMS.txt-Generator-by-Dante-Testa.git
-cd LLMS.txt-Generator-by-Dante-Testa
+git clone https://github.com/tosta/LLMS.txt-Generator.git
+cd LLMS.txt-Generator
 
 # Linter do WordPress (opcional, mas recomendado)
 composer require --dev wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer
@@ -354,10 +354,10 @@ Pull requests bem-vindos. Por favor, mantenha:
 ## 🔧 Suporte
 
 - 🎥 **Tutorial em vídeo**: [YouTube](https://youtu.be/fsVKjmBlwDM)
-- 🌐 **Site oficial**: [dantetesta.com.br](https://dantetesta.com.br)
-- 📧 **E-mail**: <dante.testa@gmail.com>
+- 🌐 **Site oficial**: [tosta.com.br](https://tosta.com.br)
+- 📧 **E-mail**: <contato@tosta.com.br>
 - 💬 **WhatsApp (grupo)**: [Entrar](https://chat.whatsapp.com/HPvy2fzidRM2jhNj7ii22u)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/dantetesta/LLMS.txt-Generator-by-Dante-Testa/issues)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/tosta/LLMS.txt-Generator/issues)
 
 Ao abrir uma issue, por favor inclua:
 - Versão do WordPress, PHP e do plugin
@@ -480,7 +480,7 @@ Sua missão é **democratizar o acesso a ferramentas de qualidade** e conhecimen
 
 ### 🔗 Onde encontrar
 
-- 🌐 **Site**: [dantetesta.com.br](https://dantetesta.com.br)
+- 🌐 **Site**: [tosta.com.br](https://tosta.com.br)
 - 🎥 **YouTube**: [@dantetesta](https://www.youtube.com/@dantetesta)
 - 💻 **GitHub**: [@dantetesta](https://github.com/dantetesta)
 - 💬 **WhatsApp (grupo)**: [entrar na comunidade](https://chat.whatsapp.com/HPvy2fzidRM2jhNj7ii22u)
@@ -496,5 +496,5 @@ Você pode usar, modificar e redistribuir livremente — comercial ou pessoalmen
 ---
 
 <p align="center">
-  Feito com ❤️ no Brasil — Dante Testa Soluções Digitais
+  Feito com ❤️ no Brasil — Tosta Soluções Digitais
 </p>

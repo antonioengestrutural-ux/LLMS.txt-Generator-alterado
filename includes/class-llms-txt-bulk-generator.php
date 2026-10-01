@@ -4,7 +4,6 @@
  *
  * @package LLMS_Txt_Generator
  * @since 1.0.0
- * @author Dante Testa (https://dantetesta.com.br)
  * @updated 2026-01-03 - Compatibilidade PHP 8.2+ e segurança
  * @updated 2026-10-01 - Compatibilidade PHP 8.4 (sem chamadas deprecadas)
  */

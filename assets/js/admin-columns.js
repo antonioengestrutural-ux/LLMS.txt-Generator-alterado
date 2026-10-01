@@ -3,7 +3,6 @@
  * 
  * @package LLMS_Txt_Generator
  * @since 1.0.0
- * @author Dante Testa (https://dantetesta.com.br)
  */
 (function($) {
     'use strict';

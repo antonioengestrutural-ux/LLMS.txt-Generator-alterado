@@ -1,7 +1,6 @@
 /**
  * JavaScript para a página de administração do LLMS.txt Generator
  * 
- * @author Dante Testa (https://dantetesta.com.br)
  * @version 1.1.0
  */
 

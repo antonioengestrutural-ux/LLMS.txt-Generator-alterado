@@ -4,7 +4,6 @@
  *
  * @package LLMS_Txt_Generator
  * @since 1.0.0
- * @author Dante Testa (https://dantetesta.com.br)
  * @updated 2026-01-03 - Compatibilidade PHP 8.2+ e segurança
  */
 
@@ -582,7 +581,7 @@ class LLMS_Txt_File
         // Adicionar rodapé
         $lines[] = "";
         $lines[] = "---";
-        $lines[] = "Gerado por LLMS.txt Generator do Dante Testa www.dantetesta.com.br v" . LLMS_TXT_GENERATOR_VERSION . " | " . wp_date('Y-m-d H:i:s');
+        $lines[] = "Gerado por LLMS.txt Generator da Tosta www.tosta.com.br v" . LLMS_TXT_GENERATOR_VERSION . " | " . wp_date('Y-m-d H:i:s');
 
         // Limpa o cache de metas após a geração para liberar memória.
         $this->meta_cache = null;

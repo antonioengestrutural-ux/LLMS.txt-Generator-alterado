@@ -1,11 +1,11 @@
 # LLMS.txt Generator - Tradução Padrão em Português Brasileiro
-# Copyright (C) 2025 Dante Testa
+# Copyright (C) 2025 Tosta
 # This file is distributed under the same license as the LLMS.txt Generator plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: LLMS.txt Generator 2.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/llms-txt-generator\n"
-"Last-Translator: Dante Testa <contato@dantetesta.com.br>\n"
+"Last-Translator: Tosta <contato@tosta.com.br>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
